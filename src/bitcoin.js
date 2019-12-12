@@ -5,7 +5,7 @@ import React from 'react';
 import _ from 'lodash';
 
 import _data from './bitcoin-data';
-import { MA, normalize } from './lib';
+import { sma, normalize } from './lib';
 import Graph from './graph';
 
 export default () => {
@@ -19,8 +19,8 @@ export default () => {
       let xs0 = generateData1()
       // Calculate R
       const xs1 = xs0.map((o, i) => {
-         let ma50 = MA(xs0.map(o => o.V), 50);
-         let ma350 = MA(xs0.map(o => o.V), 350);
+         let ma50 = sma(xs0.map(o => o.V), 50);
+         let ma350 = sma(xs0.map(o => o.V), 350);
          let R = ma50[i]/ma350[i];
          return { ...o, R }; //R: isNaN(R) ? 0 : R
       })

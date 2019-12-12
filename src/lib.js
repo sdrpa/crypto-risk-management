@@ -1,4 +1,4 @@
-export const MA = (d, t) => {
+export const sma = (d, t) => {
    if (d.length >= t && d.constructor === Array) {
       var r = [], s = 0, ma;
       for (var i = 0; i < d.length; ++i) {
@@ -23,3 +23,21 @@ export const MA = (d, t) => {
 export const normalize = (val, minVal, maxVal, newMin, newMax) => {
    return newMin + (val - minVal) * (newMax - newMin) / (maxVal - minVal);
 };
+
+export const average = data => {
+   const sum = data.reduce((sum, value) => sum + value, 0);
+   const avg = sum / data.length;
+   return avg;
+};
+
+export const std = xs => {
+   let avg = average(xs);
+   let squareDiffs = xs.map(v => {
+      var diff = v - avg;
+      var sqrDiff = diff * diff;
+      return sqrDiff;
+   });
+   let avgSquareDiff = average(squareDiffs);
+   let stdDev = Math.sqrt(avgSquareDiff);
+   return stdDev;
+}
