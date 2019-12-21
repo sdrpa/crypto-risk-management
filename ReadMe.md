@@ -13,13 +13,4 @@ npm start
 ```
 Open [http://localhost:3000/](http://localhost:3000/) in your browser.
 
-## How to switch between Btc, Eth ...
-
-Uncomment/comment code in [index.js](https://raw.githubusercontent.com/sdrpa/crypto-risk-management/master/src/index.js)
-```
-import Graph from './ethereum';
-//import Graph from './bitcoin';
-//import Graph from './lisk';
-```
-
 ![screenshot](https://raw.githubusercontent.com/sdrpa/crypto-risk-management/master/screenshot.png)
