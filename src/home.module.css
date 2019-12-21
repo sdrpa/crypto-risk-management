@@ -1,0 +1,10 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+
+.status {
+   font-size: normal;
+   font-weight: normal;
+}

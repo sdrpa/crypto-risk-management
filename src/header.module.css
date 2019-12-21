@@ -1,0 +1,11 @@
+header {
+   display: flex;
+}
+
+header nav {
+   padding: 1em;
+}
+
+header nav a {
+   padding: 0 1em;
+}
